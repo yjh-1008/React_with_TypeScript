@@ -1,18 +1,9 @@
 "use strict";
-let appId = 'abc';
-const button = document.querySelector('button');
-function add1(n1, n2) {
-    if (n1 + n2 > 0) {
-        return n1 + n2;
+class Department {
+    constructor(name) {
+        this.name = name;
     }
-    return;
 }
-function clickHandler(message) {
-    console.log('clcked' + message);
-}
-if (button) {
-    button.addEventListener('click', () => {
-        clickHandler('click message!');
-    });
-}
+const accounting = new Department('jun');
+console.log(accounting);
 //# sourceMappingURL=app.js.map
