@@ -1,21 +1,16 @@
-type AddFn = (a:number, b:number)=>number
-let add:AddFn
-interface Named{
-    readonly name:string
-}
-
-interface Greetable extends Named{
-    greet(parse:string):void;
-}
-
-class Person implements Greetable{
+type Admin={
     name:string;
-    constructor(name:string){
-        this.name=name;
-    }
-    greet(pharse:string){
-        console.log(pharse);
-    }
-}
+    privileges:string[],
 
-let user1: Person;
+};
+
+type Employee={
+    name:string;
+    startDate:Date;
+};
+type ElevatedEmployee=Admin & Employee;
+const e1 : ElevatedEmployee = {
+    name:'MAX',
+    privileges:['created-server'],
+    startDate:new Date()
+}
